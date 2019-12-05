@@ -15,7 +15,6 @@ def testW():
         if i > 10:
             raise StopIteration
 
-
 async def downloadurl(url):
     data =  requests.get(url)
     print("get {} response complete.".format(url))
@@ -29,7 +28,6 @@ async def maindown():
     end = time.time()
     print("Complete in {} seconds".format(end - start))
 
-
 async def testawait2(i):
     r = await other_test(i)
     print(i,r)
@@ -39,8 +37,6 @@ async def other_test(url):
     r = requests.get(url)
     print(time.time()-start)
     return r
-
-
 
 now = lambda: time.time()
 
@@ -66,17 +62,39 @@ async def mainsub():
     for task in dones:
         print('Task ret: ', task.result())
 
-    for p in pendings:
-        print('pending {}'.format(p))
+
+
+def consumer():
+    r = ''
+    while True:
+        n = yield r  # 跳出生成器，n没有定义
+        print("_"*50,n)
+        if not n:
+            print("*"*50)
+            return
+        print('[CONSUMER] Consuming %s...' %n)
+        r = '200 OK'
+def produce(c):
+    c.send(None)  # 启动生成器，从生成器函数的第一行代码开始执行
+    n = 0
+    while n < 5:
+        n = n + 1
+        print('[PRODUCE] Producing %s....' %n)
+        r = c.send(n) #获取yield返回值
+        print('[PRODUCE] Consumer return %s....' %r)
+    c.close()  # 关闭consumer，整个过程结束
 
 
 class TestY(unittest.TestCase):
+    def testProduct(self):
+        c = consumer()  # 创建生成器对象
+        produce(c)
+
+
     def testMainSub(self):
         start = now()
-
         loop = asyncio.get_event_loop()
         loop.run_until_complete(mainsub())
-
         print('TIME: ', now() - start)
 
 
@@ -94,6 +112,13 @@ class TestY(unittest.TestCase):
         b2 = bytearray(b)
         s = str(b,encoding="utf8")
         print(s,b2,b2[:2])
+
+        l = list(map(lambda x : x+1,iter([1,2,3,4,5])))
+        print(l)
+
+        s = set([1,2,3,4,5,6])
+        l = list(map(lambda x:x+1,s))
+        print(l)
         for i in b2:
             print(i)
         a = testY()

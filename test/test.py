@@ -5,8 +5,9 @@ from call import call
 _FileName = "./1.txt"
 
 def getbody():
-    f = open(_FileName, 'rb')
-    buf = f.read(110)
+    buf = ""
+    with open(_FileName, 'rb') as f:
+        buf = f.read(110)
     f.close()
     return buf
 
