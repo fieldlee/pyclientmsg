@@ -14,7 +14,7 @@ service MidService {
 }
 
 service ClientService{
-    rpc Call(NetReqInfo)            returns (CallRspInfo) {};
+    rpc Call(CallReqInfo)            returns (CallRspInfo) {};
     rpc AsyncCall(SingleResultInfo) returns (CallRspInfo) {};
 }
 
@@ -22,8 +22,14 @@ service ClientService{
 
 message NetReqInfo
 {
-    bytes   m_Body   = 1;     ///请求rpc bytes
-    string  service  = 2;     ///请求的注册服务的名称，只有publish用的到
+    bytes      m_Body   = 1;     ///请求rpc bytes
+    string     service  = 2;     ///请求的注册服务的名称，只有publish用的到
+}
+
+message CallReqInfo
+{
+    Net_Pack   m_Body   = 1;     ///请求rpc bytes
+    string     service  = 2;     ///请求的注册服务的名称，只有publish用的到
 }
 
 message CallRspInfo
@@ -116,6 +122,7 @@ message PublishReturnInfo{
     bool    success          = 1;    // 广播结果
     bytes   msg              = 2;    // 结果说明
 }
+
 
 /// go get -u github.com/golang/protobuf/tree/master/protoc-gen-go
 /// protoc --go_out=plugins=grpc:. proto/midmsg.proto

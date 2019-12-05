@@ -120,13 +120,13 @@ def event():
 threading.Condition
 
 '''
-def consumer(cond):
+def consumer(cond:threading.Condition):
     with cond:
         print("consumer 之前")
         cond.wait()
         print("consumer 开始消费")
 
-def produce(cond):
+def produce(cond:threading.Condition):
     with cond:
         print("produce 之前")
         cond.notifyAll()

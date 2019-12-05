@@ -1,10 +1,12 @@
 import yaml
 
-def getYaml():
-    with open("./config.yaml",'r') as f:
+configfile = "../config.yaml"
+
+def getYaml(path:str):
+    with open(path,'r') as f:
         d = f.read()
         data = yaml.load(d,yaml.FullLoader)
     f.close()
     return data
 
-config = getYaml()
+config = getYaml(configfile)

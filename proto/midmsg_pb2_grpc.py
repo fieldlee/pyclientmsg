@@ -143,7 +143,7 @@ class ClientServiceStub(object):
     """
     self.Call = channel.unary_unary(
         '/proto.ClientService/Call',
-        request_serializer=proto_dot_midmsg__pb2.NetReqInfo.SerializeToString,
+        request_serializer=proto_dot_midmsg__pb2.CallReqInfo.SerializeToString,
         response_deserializer=proto_dot_midmsg__pb2.CallRspInfo.FromString,
         )
     self.AsyncCall = channel.unary_unary(
@@ -176,7 +176,7 @@ def add_ClientServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
       'Call': grpc.unary_unary_rpc_method_handler(
           servicer.Call,
-          request_deserializer=proto_dot_midmsg__pb2.NetReqInfo.FromString,
+          request_deserializer=proto_dot_midmsg__pb2.CallReqInfo.FromString,
           response_serializer=proto_dot_midmsg__pb2.CallRspInfo.SerializeToString,
       ),
       'AsyncCall': grpc.unary_unary_rpc_method_handler(

@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='proto',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x12proto/midmsg.proto\x12\x05proto\"-\n\nNetReqInfo\x12\x0e\n\x06m_Body\x18\x01 \x01(\x0c\x12\x0f\n\x07service\x18\x02 \x01(\t\" \n\x0b\x43\x61llRspInfo\x12\x11\n\tm_Net_Rsp\x18\x01 \x01(\x0c\"\x95\x01\n\nNetRspInfo\x12\x31\n\tm_Net_Rsp\x18\x01 \x03(\x0b\x32\x1e.proto.NetRspInfo.MNetRspEntry\x12\r\n\x05m_Err\x18\x02 \x01(\x0c\x1a\x45\n\x0cMNetRspEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12$\n\x05value\x18\x02 \x01(\x0b\x32\x15.proto.SendResultInfo:\x02\x38\x01\"\x9d\x02\n\x0eSendResultInfo\x12\x0b\n\x03Key\x18\x01 \x01(\r\x12\x11\n\tSendCount\x18\x02 \x01(\x05\x12\x14\n\x0cSuccessCount\x18\x03 \x01(\x05\x12\x11\n\tFailCount\x18\x04 \x01(\x05\x12\x14\n\x0c\x44iscardCount\x18\x05 \x01(\x05\x12\x13\n\x0bReSendCount\x18\x06 \x01(\x05\x12\x10\n\x08\x43heckErr\x18\x07 \x01(\x0c\x12\x39\n\nResultList\x18\x08 \x03(\x0b\x32%.proto.SendResultInfo.ResultListEntry\x1aJ\n\x0fResultListEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12&\n\x05value\x18\x02 \x01(\x0b\x32\x17.proto.SingleResultInfo:\x02\x38\x01\"\xcc\x01\n\x10SingleResultInfo\x12\x13\n\x0b\x41skSequence\x18\x01 \x01(\x04\x12\x13\n\x0bSendTimeApp\x18\x02 \x01(\x04\x12\x0f\n\x07MsgType\x18\x03 \x01(\x05\x12\x12\n\nMsgAckType\x18\x04 \x01(\x05\x12\x10\n\x08SyncType\x18\x05 \x01(\r\x12\x11\n\tIsTimeOut\x18\x06 \x01(\x08\x12\x11\n\tIsDisCard\x18\x07 \x01(\x08\x12\x10\n\x08IsResend\x18\x08 \x01(\x08\x12\x0f\n\x07\x45rrinfo\x18\t \x01(\x0c\x12\x0e\n\x06Result\x18\n \x01(\x0c\"\x85\x01\n\x0bGJ_Net_Pack\x12\x34\n\nm_Net_Pack\x18\x01 \x03(\x0b\x32 .proto.GJ_Net_Pack.MNetPackEntry\x1a@\n\rMNetPackEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12\x1e\n\x05value\x18\x02 \x01(\x0b\x32\x0f.proto.Net_Pack:\x02\x38\x01\"\xd0\x02\n\x08Net_Pack\x12\r\n\x05m_Msg\x18\x01 \x01(\x0c\x12\x32\n\tm_MsgBody\x18\x02 \x01(\x0b\x32\x1f.proto.Net_Pack.Min_Net_MsgBody\x1a\x80\x02\n\x0fMin_Net_MsgBody\x12\x12\n\nm_lAsktype\x18\x01 \x01(\x04\x12\x19\n\x11m_lServerSequence\x18\x02 \x01(\x04\x12\x16\n\x0em_lAskSequence\x18\x03 \x01(\x04\x12\x15\n\rm_cMsgAckType\x18\x04 \x01(\x05\x12\x12\n\nm_cMsgType\x18\x05 \x01(\x05\x12\x14\n\x0cm_sSendCount\x18\x06 \x01(\x05\x12\x15\n\rm_lExpireTime\x18\x07 \x01(\r\x12\x16\n\x0em_iSendTimeApp\x18\x08 \x01(\x04\x12\x11\n\tm_lResult\x18\t \x01(\x05\x12\x0f\n\x07m_lBack\x18\n \x01(\x04\x12\x12\n\nm_iDiscard\x18\x0b \x01(\x05\":\n\x0cRegisterInfo\x12\n\n\x02ip\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\t\x12\x10\n\x08sequence\x18\x03 \x01(\t\"2\n\x12RegisterReturnInfo\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0b\n\x03msg\x18\x02 \x01(\x0c\":\n\rSubscribeInfo\x12\n\n\x02ip\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\t\x12\x0f\n\x07service\x18\x03 \x01(\t\"3\n\x13SubscribeReturnInfo\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0b\n\x03msg\x18\x02 \x01(\x0c\"\x1e\n\x0bPublishInfo\x12\x0f\n\x07service\x18\x01 \x01(\t\"1\n\x11PublishReturnInfo\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0b\n\x03msg\x18\x02 \x01(\x0c\x32\xdc\x02\n\nMidService\x12.\n\x04Sync\x12\x11.proto.NetReqInfo\x1a\x11.proto.NetRspInfo\"\x00\x12/\n\x05\x41sync\x12\x11.proto.NetReqInfo\x1a\x11.proto.NetRspInfo\"\x00\x12\x33\n\tBroadcast\x12\x11.proto.NetReqInfo\x1a\x11.proto.NetRspInfo\"\x00\x12<\n\x08Register\x12\x13.proto.RegisterInfo\x1a\x19.proto.RegisterReturnInfo\"\x00\x12\x39\n\x07Publish\x12\x12.proto.PublishInfo\x1a\x18.proto.PublishReturnInfo\"\x00\x12?\n\tSubscribe\x12\x14.proto.SubscribeInfo\x1a\x1a.proto.SubscribeReturnInfo\"\x00\x32|\n\rClientService\x12/\n\x04\x43\x61ll\x12\x11.proto.NetReqInfo\x1a\x12.proto.CallRspInfo\"\x00\x12:\n\tAsyncCall\x12\x17.proto.SingleResultInfo\x1a\x12.proto.CallRspInfo\"\x00\x62\x06proto3')
+  serialized_pb=_b('\n\x12proto/midmsg.proto\x12\x05proto\"-\n\nNetReqInfo\x12\x0e\n\x06m_Body\x18\x01 \x01(\x0c\x12\x0f\n\x07service\x18\x02 \x01(\t\"?\n\x0b\x43\x61llReqInfo\x12\x1f\n\x06m_Body\x18\x01 \x01(\x0b\x32\x0f.proto.Net_Pack\x12\x0f\n\x07service\x18\x02 \x01(\t\" \n\x0b\x43\x61llRspInfo\x12\x11\n\tm_Net_Rsp\x18\x01 \x01(\x0c\"\x95\x01\n\nNetRspInfo\x12\x31\n\tm_Net_Rsp\x18\x01 \x03(\x0b\x32\x1e.proto.NetRspInfo.MNetRspEntry\x12\r\n\x05m_Err\x18\x02 \x01(\x0c\x1a\x45\n\x0cMNetRspEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12$\n\x05value\x18\x02 \x01(\x0b\x32\x15.proto.SendResultInfo:\x02\x38\x01\"\x9d\x02\n\x0eSendResultInfo\x12\x0b\n\x03Key\x18\x01 \x01(\r\x12\x11\n\tSendCount\x18\x02 \x01(\x05\x12\x14\n\x0cSuccessCount\x18\x03 \x01(\x05\x12\x11\n\tFailCount\x18\x04 \x01(\x05\x12\x14\n\x0c\x44iscardCount\x18\x05 \x01(\x05\x12\x13\n\x0bReSendCount\x18\x06 \x01(\x05\x12\x10\n\x08\x43heckErr\x18\x07 \x01(\x0c\x12\x39\n\nResultList\x18\x08 \x03(\x0b\x32%.proto.SendResultInfo.ResultListEntry\x1aJ\n\x0fResultListEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12&\n\x05value\x18\x02 \x01(\x0b\x32\x17.proto.SingleResultInfo:\x02\x38\x01\"\xcc\x01\n\x10SingleResultInfo\x12\x13\n\x0b\x41skSequence\x18\x01 \x01(\x04\x12\x13\n\x0bSendTimeApp\x18\x02 \x01(\x04\x12\x0f\n\x07MsgType\x18\x03 \x01(\x05\x12\x12\n\nMsgAckType\x18\x04 \x01(\x05\x12\x10\n\x08SyncType\x18\x05 \x01(\r\x12\x11\n\tIsTimeOut\x18\x06 \x01(\x08\x12\x11\n\tIsDisCard\x18\x07 \x01(\x08\x12\x10\n\x08IsResend\x18\x08 \x01(\x08\x12\x0f\n\x07\x45rrinfo\x18\t \x01(\x0c\x12\x0e\n\x06Result\x18\n \x01(\x0c\"\x85\x01\n\x0bGJ_Net_Pack\x12\x34\n\nm_Net_Pack\x18\x01 \x03(\x0b\x32 .proto.GJ_Net_Pack.MNetPackEntry\x1a@\n\rMNetPackEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12\x1e\n\x05value\x18\x02 \x01(\x0b\x32\x0f.proto.Net_Pack:\x02\x38\x01\"\xd0\x02\n\x08Net_Pack\x12\r\n\x05m_Msg\x18\x01 \x01(\x0c\x12\x32\n\tm_MsgBody\x18\x02 \x01(\x0b\x32\x1f.proto.Net_Pack.Min_Net_MsgBody\x1a\x80\x02\n\x0fMin_Net_MsgBody\x12\x12\n\nm_lAsktype\x18\x01 \x01(\x04\x12\x19\n\x11m_lServerSequence\x18\x02 \x01(\x04\x12\x16\n\x0em_lAskSequence\x18\x03 \x01(\x04\x12\x15\n\rm_cMsgAckType\x18\x04 \x01(\x05\x12\x12\n\nm_cMsgType\x18\x05 \x01(\x05\x12\x14\n\x0cm_sSendCount\x18\x06 \x01(\x05\x12\x15\n\rm_lExpireTime\x18\x07 \x01(\r\x12\x16\n\x0em_iSendTimeApp\x18\x08 \x01(\x04\x12\x11\n\tm_lResult\x18\t \x01(\x05\x12\x0f\n\x07m_lBack\x18\n \x01(\x04\x12\x12\n\nm_iDiscard\x18\x0b \x01(\x05\":\n\x0cRegisterInfo\x12\n\n\x02ip\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\t\x12\x10\n\x08sequence\x18\x03 \x01(\t\"2\n\x12RegisterReturnInfo\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0b\n\x03msg\x18\x02 \x01(\x0c\":\n\rSubscribeInfo\x12\n\n\x02ip\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\t\x12\x0f\n\x07service\x18\x03 \x01(\t\"3\n\x13SubscribeReturnInfo\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0b\n\x03msg\x18\x02 \x01(\x0c\"\x1e\n\x0bPublishInfo\x12\x0f\n\x07service\x18\x01 \x01(\t\"1\n\x11PublishReturnInfo\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0b\n\x03msg\x18\x02 \x01(\x0c\x32\xdc\x02\n\nMidService\x12.\n\x04Sync\x12\x11.proto.NetReqInfo\x1a\x11.proto.NetRspInfo\"\x00\x12/\n\x05\x41sync\x12\x11.proto.NetReqInfo\x1a\x11.proto.NetRspInfo\"\x00\x12\x33\n\tBroadcast\x12\x11.proto.NetReqInfo\x1a\x11.proto.NetRspInfo\"\x00\x12<\n\x08Register\x12\x13.proto.RegisterInfo\x1a\x19.proto.RegisterReturnInfo\"\x00\x12\x39\n\x07Publish\x12\x12.proto.PublishInfo\x1a\x18.proto.PublishReturnInfo\"\x00\x12?\n\tSubscribe\x12\x14.proto.SubscribeInfo\x1a\x1a.proto.SubscribeReturnInfo\"\x00\x32}\n\rClientService\x12\x30\n\x04\x43\x61ll\x12\x12.proto.CallReqInfo\x1a\x12.proto.CallRspInfo\"\x00\x12:\n\tAsyncCall\x12\x17.proto.SingleResultInfo\x1a\x12.proto.CallRspInfo\"\x00\x62\x06proto3')
 )
 
 
@@ -64,6 +64,44 @@ _NETREQINFO = _descriptor.Descriptor(
 )
 
 
+_CALLREQINFO = _descriptor.Descriptor(
+  name='CallReqInfo',
+  full_name='proto.CallReqInfo',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='m_Body', full_name='proto.CallReqInfo.m_Body', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='service', full_name='proto.CallReqInfo.service', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=76,
+  serialized_end=139,
+)
+
+
 _CALLRSPINFO = _descriptor.Descriptor(
   name='CallRspInfo',
   full_name='proto.CallRspInfo',
@@ -90,8 +128,8 @@ _CALLRSPINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=76,
-  serialized_end=108,
+  serialized_start=141,
+  serialized_end=173,
 )
 
 
@@ -128,8 +166,8 @@ _NETRSPINFO_MNETRSPENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=191,
-  serialized_end=260,
+  serialized_start=256,
+  serialized_end=325,
 )
 
 _NETRSPINFO = _descriptor.Descriptor(
@@ -165,8 +203,8 @@ _NETRSPINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=111,
-  serialized_end=260,
+  serialized_start=176,
+  serialized_end=325,
 )
 
 
@@ -203,8 +241,8 @@ _SENDRESULTINFO_RESULTLISTENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=474,
-  serialized_end=548,
+  serialized_start=539,
+  serialized_end=613,
 )
 
 _SENDRESULTINFO = _descriptor.Descriptor(
@@ -282,8 +320,8 @@ _SENDRESULTINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=263,
-  serialized_end=548,
+  serialized_start=328,
+  serialized_end=613,
 )
 
 
@@ -376,8 +414,8 @@ _SINGLERESULTINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=551,
-  serialized_end=755,
+  serialized_start=616,
+  serialized_end=820,
 )
 
 
@@ -414,8 +452,8 @@ _GJ_NET_PACK_MNETPACKENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=827,
-  serialized_end=891,
+  serialized_start=892,
+  serialized_end=956,
 )
 
 _GJ_NET_PACK = _descriptor.Descriptor(
@@ -444,8 +482,8 @@ _GJ_NET_PACK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=758,
-  serialized_end=891,
+  serialized_start=823,
+  serialized_end=956,
 )
 
 
@@ -545,8 +583,8 @@ _NET_PACK_MIN_NET_MSGBODY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=974,
-  serialized_end=1230,
+  serialized_start=1039,
+  serialized_end=1295,
 )
 
 _NET_PACK = _descriptor.Descriptor(
@@ -582,8 +620,8 @@ _NET_PACK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=894,
-  serialized_end=1230,
+  serialized_start=959,
+  serialized_end=1295,
 )
 
 
@@ -627,8 +665,8 @@ _REGISTERINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1232,
-  serialized_end=1290,
+  serialized_start=1297,
+  serialized_end=1355,
 )
 
 
@@ -665,8 +703,8 @@ _REGISTERRETURNINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1292,
-  serialized_end=1342,
+  serialized_start=1357,
+  serialized_end=1407,
 )
 
 
@@ -710,8 +748,8 @@ _SUBSCRIBEINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1344,
-  serialized_end=1402,
+  serialized_start=1409,
+  serialized_end=1467,
 )
 
 
@@ -748,8 +786,8 @@ _SUBSCRIBERETURNINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1404,
-  serialized_end=1455,
+  serialized_start=1469,
+  serialized_end=1520,
 )
 
 
@@ -779,8 +817,8 @@ _PUBLISHINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1457,
-  serialized_end=1487,
+  serialized_start=1522,
+  serialized_end=1552,
 )
 
 
@@ -817,10 +855,11 @@ _PUBLISHRETURNINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1489,
-  serialized_end=1538,
+  serialized_start=1554,
+  serialized_end=1603,
 )
 
+_CALLREQINFO.fields_by_name['m_Body'].message_type = _NET_PACK
 _NETRSPINFO_MNETRSPENTRY.fields_by_name['value'].message_type = _SENDRESULTINFO
 _NETRSPINFO_MNETRSPENTRY.containing_type = _NETRSPINFO
 _NETRSPINFO.fields_by_name['m_Net_Rsp'].message_type = _NETRSPINFO_MNETRSPENTRY
@@ -833,6 +872,7 @@ _GJ_NET_PACK.fields_by_name['m_Net_Pack'].message_type = _GJ_NET_PACK_MNETPACKEN
 _NET_PACK_MIN_NET_MSGBODY.containing_type = _NET_PACK
 _NET_PACK.fields_by_name['m_MsgBody'].message_type = _NET_PACK_MIN_NET_MSGBODY
 DESCRIPTOR.message_types_by_name['NetReqInfo'] = _NETREQINFO
+DESCRIPTOR.message_types_by_name['CallReqInfo'] = _CALLREQINFO
 DESCRIPTOR.message_types_by_name['CallRspInfo'] = _CALLRSPINFO
 DESCRIPTOR.message_types_by_name['NetRspInfo'] = _NETRSPINFO
 DESCRIPTOR.message_types_by_name['SendResultInfo'] = _SENDRESULTINFO
@@ -853,6 +893,13 @@ NetReqInfo = _reflection.GeneratedProtocolMessageType('NetReqInfo', (_message.Me
   # @@protoc_insertion_point(class_scope:proto.NetReqInfo)
   })
 _sym_db.RegisterMessage(NetReqInfo)
+
+CallReqInfo = _reflection.GeneratedProtocolMessageType('CallReqInfo', (_message.Message,), {
+  'DESCRIPTOR' : _CALLREQINFO,
+  '__module__' : 'proto.midmsg_pb2'
+  # @@protoc_insertion_point(class_scope:proto.CallReqInfo)
+  })
+_sym_db.RegisterMessage(CallReqInfo)
 
 CallRspInfo = _reflection.GeneratedProtocolMessageType('CallRspInfo', (_message.Message,), {
   'DESCRIPTOR' : _CALLRSPINFO,
@@ -981,8 +1028,8 @@ _MIDSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=1541,
-  serialized_end=1889,
+  serialized_start=1606,
+  serialized_end=1954,
   methods=[
   _descriptor.MethodDescriptor(
     name='Sync',
@@ -1050,15 +1097,15 @@ _CLIENTSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=1,
   serialized_options=None,
-  serialized_start=1891,
-  serialized_end=2015,
+  serialized_start=1956,
+  serialized_end=2081,
   methods=[
   _descriptor.MethodDescriptor(
     name='Call',
     full_name='proto.ClientService.Call',
     index=0,
     containing_service=None,
-    input_type=_NETREQINFO,
+    input_type=_CALLREQINFO,
     output_type=_CALLRSPINFO,
     serialized_options=None,
   ),

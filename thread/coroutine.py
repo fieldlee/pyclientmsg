@@ -36,8 +36,8 @@ def fun2():
     gevent.sleep(0)
     print("end th zhihu.com")  # 第四步
 
-
-gevent.joinall([
-    gevent.spawn(fun1),
-    gevent.spawn(fun2),
-])
+if __name__=="__main__":
+    gevent.joinall([
+        gevent.spawn(fun1),
+        gevent.spawn(fun2),
+    ])

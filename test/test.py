@@ -22,7 +22,7 @@ class CallTest(unittest.TestCase):
             call.callAsync(body=body, service="")
 
     def testcallRegister(self):
-        call.callRegister("10001","127.0.0.1:8989")
+        call.callRegister(10001,"127.0.0.1:8989")
 
     def testcallPublish(self):
         call.callPublish("test.service1")
