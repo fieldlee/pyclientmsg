@@ -42,8 +42,60 @@ async def other_test(url):
 
 
 
+now = lambda: time.time()
+
+async def do_some_work(x):
+    print('Waiting: ', x)
+
+    await asyncio.sleep(x)
+    return 'Done after {}s'.format(x)
+
+async def mainsub():
+    coroutine1 = do_some_work(1)
+    coroutine2 = do_some_work(2)
+    coroutine3 = do_some_work(4)
+
+    tasks = [
+        asyncio.ensure_future(coroutine1),
+        asyncio.ensure_future(coroutine2),
+        asyncio.ensure_future(coroutine3)
+    ]
+
+    dones, pendings = await asyncio.wait(tasks)
+
+    for task in dones:
+        print('Task ret: ', task.result())
+
+    for p in pendings:
+        print('pending {}'.format(p))
+
+
 class TestY(unittest.TestCase):
+    def testMainSub(self):
+        start = now()
+
+        loop = asyncio.get_event_loop()
+        loop.run_until_complete(mainsub())
+
+        print('TIME: ', now() - start)
+
+
     def test1(self):
+        D = {k: 8 for k in ['s', 'd']}
+        f = {k:9 for k in list("helo")}
+        D = {k: v for (k, v) in zip(['name', 'age'], ['tom', 12])}
+
+        D = sorted(iter([2, 5, 8, 3, 1]))
+        D.reverse()
+        print(D, f)
+
+        b = '中华人民共和国'
+        b = bytes(b,encoding="utf8")
+        b2 = bytearray(b)
+        s = str(b,encoding="utf8")
+        print(s,b2,b2[:2])
+        for i in b2:
+            print(i)
         a = testY()
         for i in a:
             print(i)
